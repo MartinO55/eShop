@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./CarouselCard.module.scss";
 
-const CarouselCard = ({ test, currentClass, index }) => {
+const CarouselCard = ({ item, currentClass, index }) => {
   //so this needs to take item details from server
   //image imgLink
   //price
@@ -19,7 +19,7 @@ const CarouselCard = ({ test, currentClass, index }) => {
         }
       >
         {" "}
-        <div>{test.title}</div>
+        <div>{item.name}</div>
         <div></div>
       </div>
     </>

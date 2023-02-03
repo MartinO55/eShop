@@ -1,39 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { db, getItems } from "../../config/storebackend.js";
+import { db } from "../../config/storebackend.js";
 import { getItems } from "../../helpers/summonItems.js";
-import { onValue, ref } from "firebase/database";
-import { collection, addDoc, getDocs } from "firebase/firestore";
 import styles from "./CarouselContainer.module.scss"; //this needs styles for active and inactive, then you can toggle between them
 
 import CarouselCard from "../CarouselCard/CarouselCard";
-
-const placeholderitems = [
-  {
-    title: "Die Hard",
-    year: 1988,
-    imgUrl:
-      "https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
-  },
-  {
-    title: "Die Hard 2",
-    year: 1988,
-    imgUrl:
-      "https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
-  },
-  {
-    title: "Die Hard 3",
-    year: 1988,
-    imgUrl:
-      "https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
-  },
-  {
-    title: "Die Hard 4",
-    year: 1988,
-    imgUrl:
-      "https://m.media-amazon.com/images/M/MV5BZjRlNDUxZjAtOGQ4OC00OTNlLTgxNmQtYTBmMDgwZmNmNjkxXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
-  },
-];
 
 const CarouselContainer = () => {
   const [autoPlay, setAutoPlay] = useState(false);
@@ -41,20 +12,21 @@ const CarouselContainer = () => {
   const [items, setItems] = useState([]);
   let timeOut = null;
 
-  // const fetchItems = async () => {
-  //   await getDocs(collection(db, "ShopItems")).then((querySnapshot) => {
-  //     const newData = querySnapshot.docs.map((doc) => ({
-  //       ...doc.data(),
-  //       id: doc.id,
-  //     }));
-  //     setItems(newData);
-  //     console.log(items, newData);
-  //   });
-  // };
+  let itemsdata = [];
 
-  //this returns itemsList, which is an array containing objects; the keys are the various required things, and the variants are an array
   useEffect(() => {
-    getItems(db);
+    getItems(db)
+      .then((response) => {
+        if (!response) {
+          console.log("could not fetch data");
+          return;
+        }
+        itemsdata = response;
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setItems(itemsdata);
+      });
   }, []);
 
   useEffect(() => {
@@ -65,30 +37,36 @@ const CarouselContainer = () => {
       }, 2500);
   });
 
+  const slideLeft = () => {
+    setCurrentCenter(
+      currentCenter === 0 ? items.length - 1 : currentCenter - 1
+    );
+  };
+
   const slideRight = () => {
     setCurrentCenter(
-      currentCenter === placeholderitems.length - 1 ? 0 : currentCenter + 1
+      currentCenter === items.length - 1 ? 0 : currentCenter + 1
     );
-    //console.log(currentCenter);
   };
 
   //this needs to map the list of items
   return (
     <>
       <div>
-        {placeholderitems.map((test, index) => {
+        {items.map((item, index) => {
           return (
             <CarouselCard
-              test={test}
-              currentClass={currentCenter}
-              key={index}
-              index={index}
+              key={index} //key so react doesn't complain
+              item={item} //each item object
+              currentClass={currentCenter} //sets style for the carousel
+              index={index} //also for carousel styling
             />
           );
         })}
       </div>
 
       <button onClick={slideRight}>right</button>
+      <button onClick={slideLeft}>left</button>
     </>
   );
 };
