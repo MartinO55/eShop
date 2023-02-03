@@ -3,9 +3,9 @@ import styles from "./CarouselCard.module.scss";
 
 const CarouselCard = ({ test, currentClass, index }) => {
   //so this needs to take item details from server
-  //image
+  //image imgLink
   //price
-  //variants
+  //variants [strings]
   //name
   //favourited
   //quantity(num in store I gather)
