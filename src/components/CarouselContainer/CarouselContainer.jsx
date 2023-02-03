@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { db, getItems } from "../../config/storebackend.js";
+import { getItems } from "../../helpers/summonItems.js";
 import { onValue, ref } from "firebase/database";
 import { collection, addDoc, getDocs } from "firebase/firestore";
 import styles from "./CarouselContainer.module.scss"; //this needs styles for active and inactive, then you can toggle between them
