@@ -1,0 +1,17 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.nav_link {
+  margin: 1rem;
+  text-decoration: none;
+}
+
+.active {
+  text-decoration: underline;
+  color: black;
+  &:visited {
+    color: black;
+  }
+}
