@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { db } from "../../config/storebackend.js";
 import { getItems } from "../../helpers/summonItems.js";
+import { cleanForCarousel } from "../../helpers/cleanDataForCarousel.js";
 import styles from "./CarouselContainer.module.scss"; //this needs styles for active and inactive, then you can toggle between them
 
 import CarouselCard from "../CarouselCard/CarouselCard";
@@ -25,7 +26,9 @@ const CarouselContainer = () => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        setItems(itemsdata);
+        //setItems(itemsdata);
+        setItems(cleanForCarousel(itemsdata));
+        //console.log(items);
       });
   }, []);
 
@@ -34,7 +37,7 @@ const CarouselContainer = () => {
       autoPlay &&
       setTimeout(() => {
         slideRight();
-      }, 2500);
+      }, 3000);
   });
 
   const slideLeft = () => {
@@ -54,6 +57,8 @@ const CarouselContainer = () => {
     <>
       <div>
         {items.map((item, index) => {
+          //console.log(item)
+
           return (
             <CarouselCard
               key={index} //key so react doesn't complain

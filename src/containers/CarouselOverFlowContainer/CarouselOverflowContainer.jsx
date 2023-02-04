@@ -1,10 +1,13 @@
 import React from "react";
 import CarouselContainer from "../../components/CarouselContainer/CarouselContainer";
+import styles from "./CarouselOverflowContainer.module.scss";
 
 const CarouselOverflowContainer = () => {
   return (
     <>
-      <CarouselContainer />
+      <div className={styles.CarouselHolder}>
+        <CarouselContainer />
+      </div>
     </>
   );
 };

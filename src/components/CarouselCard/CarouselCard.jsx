@@ -9,9 +9,11 @@ const CarouselCard = ({ item, currentClass, index }) => {
   //name
   //favourited
   //quantity(num in store I gather)
+
   return (
     <>
       <div
+        //picks the centered card for the carousel
         className={
           currentClass == index
             ? styles.CarouselCard__active
@@ -20,7 +22,9 @@ const CarouselCard = ({ item, currentClass, index }) => {
       >
         {" "}
         <div>{item.name}</div>
-        <div></div>
+        <div>
+          <img src={item.imgLink} className={styles.FeatureProductImg} />
+        </div>
       </div>
     </>
   );
