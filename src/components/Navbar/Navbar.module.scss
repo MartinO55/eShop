@@ -4,13 +4,18 @@
 }
 
 .nav_link {
-  margin: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
   text-decoration: none;
+  color: black;
 }
 
 .active {
   text-decoration: underline;
   color: black;
+  background-color: grey;
+  border-radius: 10%;
+  padding: 1rem;
   &:visited {
     color: black;
   }
