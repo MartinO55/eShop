@@ -8,7 +8,7 @@ import styles from "./CarouselContainer.module.scss"; //this needs styles for ac
 import CarouselCard from "../CarouselCard/CarouselCard";
 
 const CarouselContainer = () => {
-  const [autoPlay, setAutoPlay] = useState(false);
+  const [autoPlay, setAutoPlay] = useState(true);
   const [currentCenter, setCurrentCenter] = useState(0);
   const [items, setItems] = useState([]);
   let timeOut = null;
