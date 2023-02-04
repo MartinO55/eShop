@@ -1,6 +1,7 @@
 import React from "react";
 import CarouselOverflowContainer from "../CarouselOverFlowContainer/CarouselOverflowContainer";
-import ProductGallery from "../../components/ProductGallery/ProductGallery";
+
+import ProductsGalleryHolder from "../ProductsGalleryHolder/ProductsGalleryHolder";
 
 const HomePage = () => {
   return (
@@ -8,7 +9,7 @@ const HomePage = () => {
       <CarouselOverflowContainer />
 
       {/* So I think we need a grid of all the products here  - clicking one should take you to the product page for that specific product*/}
-      <ProductGallery />
+      <ProductsGalleryHolder />
     </>
   );
 };

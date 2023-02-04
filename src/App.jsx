@@ -14,6 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
+          {/* So ProductsContainer should really be ProductsPageContainer */}
           <Route path="/products" element={<ProductsContainer />} />
         </Routes>
       </BrowserRouter>

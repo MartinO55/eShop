@@ -1,14 +1,13 @@
 .CarouselCard__active {
-  height: 20rem;
-  width: 40rem;
+  width: 100%;
   background-color: green;
-  transform: translateX(-0%);
+
   text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 1rem;
+
   display: inline-flex;
 }
 
@@ -16,6 +15,6 @@
   display: none;
 }
 .FeatureProductImg {
+  height: 25rem;
   padding: 1rem;
-  height: 12rem;
 }

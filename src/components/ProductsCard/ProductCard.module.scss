@@ -1,0 +1,12 @@
+.productCard {
+  border: 2px solid blue;
+  margin: 1rem;
+  max-width: 10rem;
+  .productCard_Title {
+    color: red;
+  }
+
+  .productCard_image {
+    height: 9rem;
+  }
+}

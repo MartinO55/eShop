@@ -19,7 +19,7 @@ const CarouselContainer = () => {
     getItems(db)
       .then((response) => {
         if (!response) {
-          console.log("could not fetch data");
+          console.log("could not fetch data for carousel");
           return;
         }
         itemsdata = response;
@@ -70,8 +70,8 @@ const CarouselContainer = () => {
         })}
       </div>
 
-      <button onClick={slideRight}>right</button>
-      <button onClick={slideLeft}>left</button>
+      {/* <button onClick={slideRight}>right</button>
+      <button onClick={slideLeft}>left</button> */}
     </>
   );
 };

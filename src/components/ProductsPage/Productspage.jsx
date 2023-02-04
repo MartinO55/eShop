@@ -1,7 +1,12 @@
 import React from "react";
+import ProductsGalleryHolder from "../../containers/ProductsGalleryHolder/ProductsGalleryHolder";
 
 const Productspage = () => {
-  return <div>Productspage</div>;
+  return (
+    <>
+      <ProductsGalleryHolder />
+    </>
+  );
 };
 
 export default Productspage;
