@@ -1,9 +1,19 @@
 .navbar {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.nav_logoHolder {
+  display: flex;
+  flex-direction: row;
+}
+.nav_logo_image {
+  height: 5rem;
+  margin-right: 1rem;
 }
 
-.nav_link {
+.nav_linkHolder {
   padding: 1rem;
   margin: 0.5rem;
   text-decoration: none;
@@ -16,6 +26,7 @@
   background-color: grey;
   border-radius: 10%;
   padding: 1rem;
+  margin: 1.5rem;
   &:visited {
     color: black;
   }

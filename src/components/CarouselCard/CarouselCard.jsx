@@ -20,8 +20,6 @@ const CarouselCard = ({ item, currentClass, index }) => {
             : styles.CarouselCard__Inactive
         }
       >
-        {" "}
-        <div>{item.name}</div>
         <div>
           <img src={item.imgLink} className={styles.FeatureProductImg} />
         </div>
