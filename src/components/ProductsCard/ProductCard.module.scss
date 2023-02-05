@@ -8,6 +8,10 @@
   flex-direction: column;
   width: 14rem;
   height: 20rem;
+  &:hover {
+    box-shadow: 0rem 0rem 1.4rem rgb(165, 165, 146);
+    transform: rotateX(6deg);
+  }
 
   .productCard_Content {
     .productCard_Title {
@@ -22,6 +26,9 @@
       .favouriteIcon {
         height: 1.3rem;
         margin-top: 1rem;
+        &:hover {
+          transform: rotateX(35deg);
+        }
       }
 
       .ProductCard_price {

@@ -5,6 +5,7 @@ import NavBar from "./components/Navbar/Navbar.jsx";
 import HomePage from "./containers/HomePageContainer/HomePage";
 import NotFound from "./components/NotFound/NotFound";
 import ProductsContainer from "./containers/ProductsPageContainer/ProductsContainer";
+import ProductFocussed from "./components/ProductFocussed/ProductFocussed.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
           {/* So ProductsContainer should really be ProductsPageContainer */}
           <Route path="/products" element={<ProductsContainer />} />
+          <Route path="" element={<ProductFocussed />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -14,7 +14,7 @@ const ProductGallery = () => {
     getItems(db)
       .then((response) => {
         if (!response) {
-          console.log("could not fetch data");
+          console.log("could not fetch data for products gallery");
           return;
         }
         itemsdata = response;
@@ -23,7 +23,7 @@ const ProductGallery = () => {
       .finally(() => {
         //setItems(itemsdata);
         setGalleryItems(itemsdata);
-        //console.log(items);
+        console.log(itemsdata);
       });
   }, []);
 
@@ -31,6 +31,11 @@ const ProductGallery = () => {
     <>
       <div className={styles.ProductGallery}>
         {galleryItems.map((item, index) => {
+          console.log(index);
+          //so in addition to this, we need to attach a function to each card that brings up each card into a separate page
+          //This could be an onclick navlink, which would navigate to a component that is /:id(index) - Product Card with different styling - the current should be gallery
+          //the new one would be focussed.
+          //it shouldn't matter that the index is the key because I am not changing data often?
           return <ProductCard key={index} product={item} />;
         })}
       </div>
