@@ -17,7 +17,7 @@ const Navbar = () => {
           <NavLink to="/" className={styles.nav_logo}>
             <img src={storeLogo} className={styles.nav_logo_image} />
           </NavLink>
-          <h2 className={styles.nav_storeName}>Pet Fashion Show | E-Store</h2>
+          <h2 className={styles.nav_storeName}>EShop</h2>
         </div>
 
         <div className={styles.nav_linkHolder}>
