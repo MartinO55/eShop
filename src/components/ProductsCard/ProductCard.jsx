@@ -5,10 +5,10 @@ const ProductCard = ({ product }) => {
   return (
     <>
       <div className={styles.productCard}>
-        <div className={styles.productCard_Title}>
-          <h3>{product.name}</h3>
-
-          <img src={product.imgLink} className={styles.productCard_image} />
+        <div className={styles.productCard_Content}>
+          <img src={product.imgLink} className={styles.productCard_Image} />
+          <h3 className={styles.productCard_Title}>{product.name}</h3>
+          <p>${product.price}</p>
         </div>
       </div>
     </>
