@@ -5,17 +5,17 @@ import { useParams } from "react-router-dom";
 import ProductFocussed from "../../components/ProductFocussed/ProductFocussed";
 
 const ProductsContainer = () => {
-  const [targetProduct, setTargetProduct] = useState(null);
+  const [targetProduct, setTargetProduct] = useState(0);
   const id = useParams();
 
   useEffect(() => {
-    setTargetProduct(id.id);
-  });
-  console.log(id.id);
+    setTargetProduct(parseInt(id.id));
+  }, []);
 
   return (
     <>
-      <ProductFocussed id={targetProduct} />
+      {console.log(typeof id.id)}
+      <ProductFocussed id={id.id} />
     </>
   );
 };

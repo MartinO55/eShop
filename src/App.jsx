@@ -7,6 +7,7 @@ import NotFound from "./components/NotFound/NotFound";
 import ProductsContainer from "./containers/ProductsPageContainer/ProductsContainer";
 
 import ProductsGalleryHolder from "./containers/ProductsGalleryHolder/ProductsGalleryHolder.jsx";
+import ProductFocussed from "./components/ProductFocussed/ProductFocussed.jsx";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="*" element={<NotFound />} />
-          {/* So ProductsContainer should really be ProductsPageContainer */}
+
           <Route path="/products" element={<ProductsGalleryHolder />} />
           <Route path="/products/:id" element={<ProductsContainer />} />
         </Routes>

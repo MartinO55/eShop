@@ -7,11 +7,15 @@ import { cleanDataForFocus } from "../../helpers/cleanDataForFocus.js";
 import styles from "./ProductFoccussed.module.scss";
 
 const ProductFocussed = (id) => {
+  console.log(id);
   //this just has to get by ID, which is annoying because this is actually the index
   let itemsdata = [];
-  const [theProduct, setTheProduct] = useState();
+  const [theProduct, setTheProduct] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
+
     getItems(db)
       .then((response) => {
         if (!response) {
@@ -22,15 +26,25 @@ const ProductFocussed = (id) => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        //setItems(itemsdata);
-        setTheProduct(cleanDataForFocus(id, itemsdata));
-        //console.log(itemsdata);
+        console.log(itemsdata[id.id]);
+        console.log(id);
+        setTheProduct(cleanDataForFocus(id.id, itemsdata));
+        setLoading(false);
       });
   }, []);
 
   return (
     <>
-      <div></div>
+      <h1>test</h1>
+      <div className={styles.aProductCard}>
+        {loading ? (
+          <p>loading ...</p>
+        ) : theProduct.length === 0 ? (
+          <p>Oops...</p>
+        ) : (
+          <div>{theProduct.name}</div>
+        )}
+      </div>
     </>
   );
 };

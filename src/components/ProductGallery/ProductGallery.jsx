@@ -51,7 +51,7 @@ const ProductGallery = () => {
           //it shouldn't matter that the index is the key because I am not changing data often?
           return (
             <div onClick={() => handleClick(index)}>
-              <ProductCard key={index} product={item} />
+              <ProductCard product={item} key={index} />
             </div>
           );
         })}
