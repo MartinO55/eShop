@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import { cleanDataForFocus } from "../../helpers/cleanDataForFocus.js";
 
 import styles from "./ProductFoccussed.module.scss";
+import unFavouriteIcon from "../../assets/Heart_Icon_empty.png";
+import favouriteIcon from "../../assets/Heart_Icon_full.png";
 
 const ProductFocussed = (id) => {
   console.log(id);
@@ -40,9 +42,36 @@ const ProductFocussed = (id) => {
         {loading ? (
           <p>loading ...</p>
         ) : theProduct.length === 0 ? (
-          <p>Oops...</p>
+          <p>Oops... That product doesn't exist</p>
         ) : (
-          <div>{theProduct.name}</div>
+          <div className={styles.aProductCard_content}>
+            <img
+              src={theProduct.imgLink}
+              alt={theProduct.name}
+              className={styles.aProductCard_content_img}
+            />
+            <div className={styles.aProductCard_content_title}>
+              {theProduct.name}
+            </div>
+
+            <p>${theProduct.price}</p>
+
+            <p>number avaialble: {theProduct.quantity}</p>
+
+            <div>{theProduct.variants}</div>
+
+            <div>
+              <img
+                src={
+                  theProduct.favourited === true
+                    ? favouriteIcon
+                    : unFavouriteIcon
+                }
+                alt="favourite Icon"
+                className={styles.aProductCard_content_favouriteIcon}
+              />
+            </div>
+          </div>
         )}
       </div>
     </>
