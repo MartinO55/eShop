@@ -28,8 +28,6 @@ const ProductFocussed = (id) => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        console.log(itemsdata[id.id]);
-        console.log(id);
         setTheProduct(cleanDataForFocus(id.id, itemsdata));
         setLoading(false);
       });
@@ -50,26 +48,34 @@ const ProductFocussed = (id) => {
               alt={theProduct.name}
               className={styles.aProductCard_content_img}
             />
-            <div className={styles.aProductCard_content_title}>
-              {theProduct.name}
-            </div>
-
-            <p>${theProduct.price}</p>
-
-            <p>number avaialble: {theProduct.quantity}</p>
-
-            <div>{theProduct.variants}</div>
-
             <div>
-              <img
-                src={
-                  theProduct.favourited === true
-                    ? favouriteIcon
-                    : unFavouriteIcon
-                }
-                alt="favourite Icon"
-                className={styles.aProductCard_content_favouriteIcon}
-              />
+              <div className={styles.aProductCard_content_title}>
+                <h2>{theProduct.name}</h2>
+              </div>
+
+              <p className={styles.aProductCard_content_price}>
+                ${theProduct.price}
+              </p>
+
+              <p className={styles.aProductCard_content_available}>
+                number available: {theProduct.quantity}
+              </p>
+
+              <div className={styles.aProductCard_content_variants}>
+                {theProduct.variants}
+              </div>
+
+              <div>
+                <img
+                  src={
+                    theProduct.favourited === true
+                      ? favouriteIcon
+                      : unFavouriteIcon
+                  }
+                  alt="favourite Icon"
+                  className={styles.aProductCard_content_favouriteIcon}
+                />
+              </div>
             </div>
           </div>
         )}
