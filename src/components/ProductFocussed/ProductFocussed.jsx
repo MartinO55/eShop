@@ -97,11 +97,7 @@ const ProductFocussed = (id) => {
 
               <div>
                 <img
-                  src={
-                    theProduct.favourited === true
-                      ? favouriteIcon
-                      : unFavouriteIcon
-                  }
+                  src={favourite === true ? favouriteIcon : unFavouriteIcon}
                   alt="favourite Icon"
                   className={styles.aProductCard_content_favouriteIcon}
                   onClick={handleClick}
