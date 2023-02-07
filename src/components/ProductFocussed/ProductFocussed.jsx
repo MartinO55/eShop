@@ -20,15 +20,22 @@ const ProductFocussed = (id) => {
 
   const handleClick = () => {
     setFavourite(!favourite);
-    //toggleFavourite(theProduct, favourite);
-    console.log(theProduct);
+    toggleFavourite(theProduct, favourite);
+    // console.log(theProduct.ID);
   };
 
   const toggleFavourite = (item, toggle) => {
-    // const data = { favourited: toggle };
-    // const docref = doc(db, "ShopItems",);
+    //console.log(item.ID);
+    const data = { favourited: toggle };
+    const docref = doc(db, "ShopItems", item.ID);
 
-    updateDoc();
+    updateDoc(docref, data)
+      .then((docref) => {
+        console.log("updated Favourites");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   useEffect(() => {
