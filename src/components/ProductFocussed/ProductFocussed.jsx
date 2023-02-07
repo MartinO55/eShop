@@ -62,7 +62,14 @@ const ProductFocussed = (id) => {
               </p>
 
               <div className={styles.aProductCard_content_variants}>
-                {theProduct.variants}
+                <ul className={styles.aProductCard_content_variantList}>
+                  Variants:
+                  {theProduct.variants.map((variant) => (
+                    <li className={styles.aProductCard_content_variantListItem}>
+                      {variant}
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               <div>
