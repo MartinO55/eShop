@@ -20,7 +20,7 @@ const ProductFocussed = (id) => {
 
   const handleClick = () => {
     setFavourite(!favourite);
-    toggleFavourite(theProduct, favourite);
+    toggleFavourite(theProduct, !favourite);
     // console.log(theProduct.ID);
   };
 
@@ -31,7 +31,7 @@ const ProductFocussed = (id) => {
 
     updateDoc(docref, data)
       .then((docref) => {
-        console.log("updated Favourites");
+        console.log("updated Favourites: " + item.name + "with " + toggle);
       })
       .catch((error) => {
         console.log(error);
@@ -97,7 +97,7 @@ const ProductFocussed = (id) => {
 
               <div>
                 <img
-                  src={favourite === true ? favouriteIcon : unFavouriteIcon}
+                  src={favourite === false ? unFavouriteIcon : favouriteIcon}
                   alt="favourite Icon"
                   className={styles.aProductCard_content_favouriteIcon}
                   onClick={handleClick}
