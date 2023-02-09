@@ -9,3 +9,12 @@ export async function getItems() {
   const itemsList = itemsSnap.docs.map((item) => item.data());
   return itemsList;
 }
+
+export async function getItemByID(idVar) {
+  const database = db;
+  const itemsCol = collection(database, "ShopItems", idVar);
+
+  const itemsSnap = await getDocs(itemsCol);
+  const itemsList = itemsSnap.docs.map((item) => item.data());
+  return itemsList;
+}
