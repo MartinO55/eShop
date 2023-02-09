@@ -1,0 +1,46 @@
+.productCard {
+  display: flex;
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 1rem;
+  margin: 1rem;
+  align-items: center;
+  flex-direction: column;
+  width: 14rem;
+  height: 20rem;
+  &:hover {
+    box-shadow: 0rem 0rem 1.4rem rgb(165, 165, 146);
+    transform: rotateX(6deg);
+    cursor: pointer;
+  }
+
+  .productCard_Content {
+    .productCard_Title {
+      color: black;
+    }
+
+    .ProductCard_details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .favouriteIcon {
+        height: 1.3rem;
+        margin-top: 1rem;
+        &:hover {
+          transform: rotateX(35deg);
+        }
+      }
+
+      .ProductCard_price {
+        color: rgb(75, 75, 75);
+      }
+    }
+
+    .productCard_Image {
+      height: 11rem;
+
+      border-radius: 1rem;
+    }
+  }
+}

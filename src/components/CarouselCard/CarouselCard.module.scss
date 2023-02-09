@@ -1,0 +1,23 @@
+.CarouselCard__active {
+  width: 100vw;
+  background-color: rgba(246, 247, 153, 0.89);
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 30rem;
+  display: inline-flex;
+  margin-top: 5rem;
+}
+
+.CarouselCard__Inactive {
+  display: none;
+}
+.FeatureProductImg {
+  height: 25rem;
+  padding: 1rem;
+  border-radius: 5rem;
+  @media only screen and (max-width: 800px) {
+    height: 20rem;
+  }
+}

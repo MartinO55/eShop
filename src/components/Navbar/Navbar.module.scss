@@ -1,0 +1,54 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-color: white;
+  transform: translateX(-0.5%);
+}
+.nav_logoHolder {
+  display: flex;
+  flex-direction: row;
+}
+.nav_logo_image {
+  height: 5rem;
+  margin-right: 1rem;
+  @media only screen and (max-width: 800px) {
+    margin: 0rem;
+  }
+}
+
+.nav_linkHolder {
+  padding: 1rem;
+  margin-top: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.nav_storeName {
+  padding-top: 0.2rem;
+}
+
+.active {
+  text-decoration: underline;
+  color: black;
+  background-color: rgba(
+    246,
+    247,
+    153,
+    0.89
+  ); //this should be in a theme somewhere
+  border-radius: 10%;
+  padding: 1rem;
+  margin: 1.5rem;
+  @media only screen and (max-width: 800px) {
+    margin: 0.5rem;
+  }
+  &:visited {
+    color: black;
+  }
+}

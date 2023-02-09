@@ -1,0 +1,43 @@
+.CarouselContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .CarouselContainer_button_GoLeft {
+    position: absolute;
+    left: 0;
+    font-size: 6rem;
+    padding-top: 3rem;
+    margin: 3rem;
+    border: none;
+    background-color: rgba(246, 247, 153, 0.89);
+    color: grey;
+    transition: 0.5s;
+    @media only screen and (max-width: 800px) {
+      background-color: rgba(255, 0, 0, 0);
+      color: black;
+    }
+    &:hover {
+      color: black;
+    }
+  }
+
+  .CarouselContainer_button_GoRight {
+    position: absolute;
+    right: 0;
+    margin: 3rem;
+    font-size: 6rem;
+    padding-top: 3rem;
+    margin: 3rem;
+    border: none;
+    background-color: rgba(246, 247, 153, 0.89);
+    color: grey;
+    transition: 0.5s;
+    @media only screen and (max-width: 800px) {
+      background-color: rgba(255, 0, 0, 0);
+      color: black;
+    }
+    &:hover {
+      color: black;
+    }
+  }
+}

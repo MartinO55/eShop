@@ -1,0 +1,54 @@
+import React from "react";
+import ProductCard from "../ProductsCard/ProductCard";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router";
+
+import { db } from "../../config/storebackend.js";
+import { getItems } from "../../helpers/summonItems.js";
+import styles from "./ProductGallery.module.scss";
+
+const ProductGallery = () => {
+  const [galleryItems, setGalleryItems] = useState([]);
+  let itemsdata = [];
+  let navigate = useNavigate();
+
+  //I vaguely feel like this should be a function called from another file
+  useEffect(() => {
+    getItems(db)
+      .then((response) => {
+        if (!response) {
+          console.log("could not fetch data for products gallery");
+          return;
+        }
+        itemsdata = response;
+      })
+      .catch((error) => console.log(error))
+      .finally(() => {
+        setGalleryItems(itemsdata);
+      });
+  }, []);
+
+  const handleClick = (idTarget) => {
+    //so this gets the index number
+    let path = `/products/${idTarget}`;
+
+    navigate(path);
+    return idTarget;
+  };
+
+  return (
+    <>
+      <div className={styles.ProductGallery}>
+        {galleryItems.map((item, index) => {
+          return (
+            <div onClick={() => handleClick(index)}>
+              <ProductCard product={item} key={index} />
+            </div>
+          );
+        })}
+      </div>
+    </>
+  );
+};
+
+export default ProductGallery;
