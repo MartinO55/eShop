@@ -1,6 +1,7 @@
 import React from "react";
 import { db } from "../../config/storebackend.js";
 import { doc, updateDoc } from "firebase/firestore";
+import { updateItem } from "../../helpers/updateItem.js";
 
 import { useState } from "react";
 
@@ -15,23 +16,10 @@ const ProductFocussed = (product) => {
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
+    console.log(favourite);
     setFavourite(!favourite);
-    toggleFavourite(product.item.favourited, !favourite); //I am not 100% this is a good idea, or that the state is needed
-  };
-
-  const toggleFavourite = (toggle) => {
-    const data = { favourited: toggle };
-    const docref = doc(db, "ShopItems", product.item.ID);
-
-    updateDoc(docref, data)
-      .then((docref) => {
-        console.log(
-          "updated Favourites: " + product.item.name + " with " + toggle
-        );
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    updateItem(product.item.ID, !favourite);
+    //toggleFavourite(); //I am not 100% this is a good idea, or that the state is needed
   };
 
   return (
