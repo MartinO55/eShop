@@ -7,7 +7,6 @@ import NotFound from "./components/NotFound/NotFound";
 import ProductsContainer from "./containers/ProductsPageContainer/ProductsContainer";
 
 import ProductsGalleryHolder from "./containers/ProductsGalleryHolder/ProductsGalleryHolder.jsx";
-import ProductFocussed from "./components/ProductFocussed/ProductFocussed.jsx";
 
 function App() {
   return (
