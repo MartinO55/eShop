@@ -15,7 +15,7 @@ const ProductsContainer = () => {
 
   return (
     <>
-      <ProductFocussed id={id.id} />
+      <ProductFocussed id={id.id} key={id.id} />
     </>
   );
 };
