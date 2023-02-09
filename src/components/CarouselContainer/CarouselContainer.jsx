@@ -5,7 +5,7 @@ import { getItems } from "../../helpers/summonItems.js";
 import { cleanForCarousel } from "../../helpers/cleanDataForCarousel.js";
 import styles from "./CarouselContainer.module.scss";
 import CarouselCard from "../CarouselCard/CarouselCard";
-
+//here we go
 const CarouselContainer = () => {
   const [autoPlay, setAutoPlay] = useState(true);
   const [currentCenter, setCurrentCenter] = useState(0);
