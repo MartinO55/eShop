@@ -1,6 +1,25 @@
 .CarouselContainer {
-  overflow: hidden;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-content: center;
+  .CarouselContainer_button_GoLeft {
+    position: absolute;
+    left: 0;
+    font-size: 6rem;
+    padding-top: 3rem;
+    margin: 3rem;
+    border: none;
+    background-color: rgba(246, 247, 153, 0.89);
+  }
+
+  .CarouselContainer_button_GoRight {
+    position: absolute;
+    right: 0;
+    margin: 3rem;
+    font-size: 6rem;
+    padding-top: 3rem;
+    margin: 3rem;
+    border: none;
+    background-color: rgba(246, 247, 153, 0.89);
+  }
 }

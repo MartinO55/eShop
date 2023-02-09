@@ -3,8 +3,7 @@ import { useState, useEffect } from "react";
 import { db } from "../../config/storebackend.js";
 import { getItems } from "../../helpers/summonItems.js";
 import { cleanForCarousel } from "../../helpers/cleanDataForCarousel.js";
-import styles from "./CarouselContainer.module.scss"; //this needs styles for active and inactive, then you can toggle between them. This has probably moved since styles is now called nowhere
-
+import styles from "./CarouselContainer.module.scss";
 import CarouselCard from "../CarouselCard/CarouselCard";
 
 const CarouselContainer = () => {
@@ -53,21 +52,33 @@ const CarouselContainer = () => {
   //this needs to map the list of items
   return (
     <>
-      <div>
-        {items.map((item, index) => {
-          return (
-            <CarouselCard
-              key={index} //key so react doesn't complain
-              item={item} //each item object
-              currentClass={currentCenter} //sets style for the carousel
-              index={index} //also for carousel styling
-            />
-          );
-        })}
-      </div>
+      <div className={styles.CarouselContainer}>
+        <div>
+          {items.map((item, index) => {
+            return (
+              <CarouselCard
+                key={index} //key so react doesn't complain
+                item={item} //each item object
+                currentClass={currentCenter} //sets style for the carousel
+                index={index} //also for carousel styling
+              />
+            );
+          })}
+        </div>
 
-      {/* <button onClick={slideRight}>right</button>
-      <button onClick={slideLeft}>left</button> */}
+        <button
+          onClick={slideLeft}
+          className={styles.CarouselContainer_button_GoLeft}
+        >
+          &#8249;
+        </button>
+        <button
+          onClick={slideRight}
+          className={styles.CarouselContainer_button_GoRight}
+        >
+          &#8250;
+        </button>
+      </div>
     </>
   );
 };
