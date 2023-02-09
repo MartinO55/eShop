@@ -16,16 +16,18 @@ const ProductFocussed = (product) => {
 
   const handleClick = () => {
     setFavourite(!favourite);
-    toggleFavourite(product, !favourite); //I am not 100% this is a good idea, or that the state is needed
+    toggleFavourite(product.item.favourited, !favourite); //I am not 100% this is a good idea, or that the state is needed
   };
 
-  const toggleFavourite = (item, toggle) => {
+  const toggleFavourite = (toggle) => {
     const data = { favourited: toggle };
-    const docref = doc(db, "ShopItems", item.ID);
+    const docref = doc(db, "ShopItems", product.item.ID);
 
     updateDoc(docref, data)
       .then((docref) => {
-        console.log("updated Favourites: " + item.name + "with " + toggle);
+        console.log(
+          "updated Favourites: " + product.item.name + " with " + toggle
+        );
       })
       .catch((error) => {
         console.log(error);
