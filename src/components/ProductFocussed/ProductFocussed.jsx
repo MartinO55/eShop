@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { cleanDataForFocus } from "../../helpers/cleanDataForFocus.js";
 
 import styles from "./ProductFoccussed.module.scss";
-import unFavouriteIcon from "../../assets/Heart_Icon_empty.png";
+import unFavouriteIcon from "../../assets/Heart_Icon_empty.png"; //change to svg
 import favouriteIcon from "../../assets/Heart_Icon_full.png";
 
 const ProductFocussed = (id) => {
@@ -37,9 +37,11 @@ const ProductFocussed = (id) => {
   };
 
   useEffect(() => {
+    //this goes up one
+
     setLoading(true);
 
-    getItems(db)
+    getItems(db) //this goes to summon
       .then((response) => {
         if (!response) {
           console.log("could not fetch data the product");

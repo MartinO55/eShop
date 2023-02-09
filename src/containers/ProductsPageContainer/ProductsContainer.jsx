@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 
 import ProductFocussed from "../../components/ProductFocussed/ProductFocussed";
 
-//this needs to be reworked a little - I don't think the state is ever used
+//this needs to be reworked a little - I don't think the state is ever used, or the useEffect
 const ProductsContainer = () => {
   const [targetProduct, setTargetProduct] = useState(0);
   const id = useParams();

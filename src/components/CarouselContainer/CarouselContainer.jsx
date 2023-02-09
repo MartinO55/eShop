@@ -25,7 +25,7 @@ const CarouselContainer = () => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        setItems(cleanForCarousel(itemsdata));
+        setItems(cleanForCarousel(itemsdata)); //this goes up to the .then block with the response instead of the itemsdata
       });
   }, []);
 
@@ -41,6 +41,7 @@ const CarouselContainer = () => {
     setCurrentCenter(
       currentCenter === 0 ? items.length - 1 : currentCenter - 1
     );
+    //maybe setAutoplay to false here
   };
 
   const slideRight = () => {
