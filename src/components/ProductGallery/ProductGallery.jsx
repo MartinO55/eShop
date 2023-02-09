@@ -6,7 +6,6 @@ import { useNavigate } from "react-router";
 import { db } from "../../config/storebackend.js";
 import { getItems } from "../../helpers/summonItems.js";
 import styles from "./ProductGallery.module.scss";
-import ProductFocussed from "../ProductFocussed/ProductFocussed";
 
 const ProductGallery = () => {
   const [galleryItems, setGalleryItems] = useState([]);
@@ -25,9 +24,7 @@ const ProductGallery = () => {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        //setItems(itemsdata);
         setGalleryItems(itemsdata);
-        //console.log(itemsdata);
       });
   }, []);
 
@@ -35,7 +32,6 @@ const ProductGallery = () => {
     //so this gets the index number
     let path = `/products/${idTarget}`;
 
-    //console.log(idTarget);
     navigate(path);
     return idTarget;
   };
@@ -44,7 +40,6 @@ const ProductGallery = () => {
     <>
       <div className={styles.ProductGallery}>
         {galleryItems.map((item, index) => {
-          //console.log(index);
           //so in addition to this, we need to attach a function to each card that brings up each card into a separate page
           //This could be an onclick navlink, which would navigate to a component that is /:id(index) - Product Card with different styling - the current should be gallery
           //the new one would be focussed.

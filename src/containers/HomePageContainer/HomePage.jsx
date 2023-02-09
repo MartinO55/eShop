@@ -8,7 +8,6 @@ const HomePage = () => {
     <>
       <CarouselOverflowContainer />
 
-      {/* So I think we need a grid of all the products here  - clicking one should take you to the product page for that specific product*/}
       <ProductsGalleryHolder />
     </>
   );

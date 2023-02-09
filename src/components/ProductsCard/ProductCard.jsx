@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./ProductCard.module.scss";
-import { useState } from "react";
-import { updateItem } from "../../helpers/updateItem";
+
 //I hope this is allowed
 import unFavouriteIcon from "../../assets/Heart_Icon_empty.png";
 import favouriteIcon from "../../assets/Heart_Icon_full.png";

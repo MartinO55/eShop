@@ -1,6 +1,6 @@
 import React from "react";
 import { db } from "../../config/storebackend.js";
-import { doc, documentId, updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
 
 import { getItems } from "../../helpers/summonItems.js";
 import { useEffect, useState } from "react";
@@ -11,7 +11,6 @@ import unFavouriteIcon from "../../assets/Heart_Icon_empty.png";
 import favouriteIcon from "../../assets/Heart_Icon_full.png";
 
 const ProductFocussed = (id) => {
-  //console.log(id);
   //this just has to get by ID, which is annoying because this is actually the index
   let itemsdata = [];
   const [theProduct, setTheProduct] = useState([]);
@@ -20,12 +19,10 @@ const ProductFocussed = (id) => {
 
   const handleClick = () => {
     setFavourite(!favourite);
-    toggleFavourite(theProduct, !favourite);
-    // console.log(theProduct.ID);
+    toggleFavourite(theProduct, !favourite); //I am not 100% this is a good idea, or that the state is needed
   };
 
   const toggleFavourite = (item, toggle) => {
-    //console.log(item.ID);
     const data = { favourited: toggle };
     const docref = doc(db, "ShopItems", item.ID);
 
@@ -63,7 +60,7 @@ const ProductFocussed = (id) => {
         {loading ? (
           <p>loading ...</p>
         ) : theProduct.length === 0 ? (
-          <p>Oops... That product doesn't exist</p>
+          <p>Oops... I don't have that product. Sorry about that!</p>
         ) : (
           <div className={styles.aProductCard_content}>
             <img
