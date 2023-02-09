@@ -10,6 +10,7 @@ export async function getItems() {
   return itemsList;
 }
 
+//in theory this should do something - in practice, I am looking at the code and I have no idea how to go from page ID(index of array) to the hexadecimal ID for the item
 export async function getItemByID(idVar) {
   const database = db;
   const itemsCol = collection(database, "ShopItems", idVar);

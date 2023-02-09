@@ -6,9 +6,6 @@ import unFavouriteIcon from "../../assets/Heart_Icon_empty.png"; //change to svg
 import favouriteIcon from "../../assets/Heart_Icon_full.png";
 
 const ProductFocussed = (product) => {
-  //This might be too much code at this level? Maybe the data fetch can go up. Also, I think we are doing too many fetches.
-  //this just has to get by ID, which is annoying because this is actually the index
-
   const [favourite, setFavourite] = useState(false);
 
   const handleClick = () => {
