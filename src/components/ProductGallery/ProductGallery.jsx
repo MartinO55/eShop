@@ -39,7 +39,7 @@ const ProductGallery = () => {
         {galleryItems.map((item, index) => {
           return (
             <div onClick={() => handleClick(index)}>
-              <ProductCard product={item} key={index} />
+              <ProductCard product={item} key={item.ID} />
             </div>
           );
         })}
