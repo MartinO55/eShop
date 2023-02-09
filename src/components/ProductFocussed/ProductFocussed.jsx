@@ -1,10 +1,6 @@
 import React from "react";
-import { db } from "../../config/storebackend.js";
-import { doc, updateDoc } from "firebase/firestore";
 import { updateItem } from "../../helpers/updateItem.js";
-
 import { useState } from "react";
-
 import styles from "./ProductFoccussed.module.scss";
 import unFavouriteIcon from "../../assets/Heart_Icon_empty.png"; //change to svg
 import favouriteIcon from "../../assets/Heart_Icon_full.png";
@@ -19,7 +15,6 @@ const ProductFocussed = (product) => {
     console.log(favourite);
     setFavourite(!favourite);
     updateItem(product.item.ID, !favourite);
-    //toggleFavourite(); //I am not 100% this is a good idea, or that the state is needed
   };
 
   return (

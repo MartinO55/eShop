@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getItemByID, getItems } from "../../helpers/summonItems";
+import { getItems } from "../../helpers/summonItems";
 import { cleanDataForFocus } from "../../helpers/cleanDataForFocus";
 
 import ProductFocussed from "../../components/ProductFocussed/ProductFocussed";
