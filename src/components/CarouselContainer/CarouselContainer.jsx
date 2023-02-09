@@ -34,7 +34,7 @@ const CarouselContainer = () => {
       autoPlay &&
       setTimeout(() => {
         slideRight();
-      }, 3000);
+      }, 10000);
   });
 
   const slideLeft = () => {

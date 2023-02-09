@@ -17,4 +17,7 @@
   height: 25rem;
   padding: 1rem;
   border-radius: 5rem;
+  @media only screen and (max-width: 800px) {
+    height: 20rem;
+  }
 }

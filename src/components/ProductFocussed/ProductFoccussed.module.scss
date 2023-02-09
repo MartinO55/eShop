@@ -41,12 +41,16 @@
       border-radius: 1rem;
       padding: 0.25rem;
       margin: 0.2rem;
+      &:hover {
+        cursor: pointer;
+      }
     }
     .aProductCard_content_favouriteIcon {
       margin: 1rem;
       height: 2rem;
       &:hover {
         transform: rotateX(40deg);
+        cursor: pointer;
       }
     }
   }

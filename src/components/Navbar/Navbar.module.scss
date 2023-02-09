@@ -17,6 +17,9 @@
 .nav_logo_image {
   height: 5rem;
   margin-right: 1rem;
+  @media only screen and (max-width: 800px) {
+    margin: 0rem;
+  }
 }
 
 .nav_linkHolder {
@@ -24,6 +27,10 @@
   margin-top: 1rem;
   text-decoration: none;
   color: black;
+}
+
+.nav_storeName {
+  padding-top: 0.2rem;
 }
 
 .active {
@@ -38,6 +45,9 @@
   border-radius: 10%;
   padding: 1rem;
   margin: 1.5rem;
+  @media only screen and (max-width: 800px) {
+    margin: 0.5rem;
+  }
   &:visited {
     color: black;
   }

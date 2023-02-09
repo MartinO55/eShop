@@ -10,6 +10,15 @@
     margin: 3rem;
     border: none;
     background-color: rgba(246, 247, 153, 0.89);
+    color: grey;
+    transition: 0.5s;
+    @media only screen and (max-width: 800px) {
+      background-color: rgba(255, 0, 0, 0);
+      color: black;
+    }
+    &:hover {
+      color: black;
+    }
   }
 
   .CarouselContainer_button_GoRight {
@@ -21,5 +30,14 @@
     margin: 3rem;
     border: none;
     background-color: rgba(246, 247, 153, 0.89);
+    color: grey;
+    transition: 0.5s;
+    @media only screen and (max-width: 800px) {
+      background-color: rgba(255, 0, 0, 0);
+      color: black;
+    }
+    &:hover {
+      color: black;
+    }
   }
 }
