@@ -9,10 +9,16 @@
   .aProductCard_content {
     display: flex;
     flex-direction: row;
+    @media only screen and (max-width: 800px) {
+      flex-direction: column;
+    }
     .aProductCard_content_img {
       height: 30rem;
       border-radius: 1rem;
       margin: 1rem;
+      @media only screen and (max-width: 800px) {
+        height: 20rem;
+      }
     }
 
     .aProductCard_content_title {
