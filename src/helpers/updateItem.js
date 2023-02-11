@@ -1,8 +1,10 @@
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../config/storebackend";
 
-export function updateItem(item, toggle) {
-  let itemRef = doc(db, "ShopItems", item);
+export function updateItem(itemID, favourite) {
+  const itemRef = doc(db, "ShopItems", itemID);
 
-  updateDoc((itemRef, { favourited: toggle }));
+  updateDoc(itemRef, { favourited: favourite }).catch((error) => {
+    console.log(error);
+  });
 }

@@ -1,31 +1,29 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { db } from "../../config/storebackend.js";
 import { getItems } from "../../helpers/summonItems.js";
 import { cleanForCarousel } from "../../helpers/cleanDataForCarousel.js";
 import styles from "./CarouselContainer.module.scss";
 import CarouselCard from "../CarouselCard/CarouselCard";
 
 const CarouselContainer = () => {
-  const [autoPlay, setAutoPlay] = useState(true);
+  const [autoPlay, setAutoPlay] = useState(false);
   const [currentCenter, setCurrentCenter] = useState(0);
   const [items, setItems] = useState([]);
   let timeOut = null;
 
-  let itemsdata = [];
-
   useEffect(() => {
-    getItems(db)
+    getItems()
       .then((response) => {
         if (!response) {
           console.log("could not fetch data for carousel");
           return;
         }
-        itemsdata = response;
+
+        setItems(cleanForCarousel(response));
       })
       .catch((error) => console.log(error))
       .finally(() => {
-        setItems(cleanForCarousel(itemsdata)); //this goes up to the .then block with the response instead of the itemsdata
+        setAutoPlay(true);
       });
   }, []);
 

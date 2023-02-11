@@ -2,12 +2,13 @@
 
 ## Outline
 
-This project is designed to reinforce your React learnings and make sure that you are comfortable with most aspect of the framework.
-With this project you will practice how to:
+This project is a shop front for a pet fashion store selling adoreable (and highly impractical) clothes for pets. There are currently 18 different products on sale, each horribly overpriced and available in small quantitites. This project was built with a react front end and a firestore back end, with SASS used for styling. The design of the store is simple enough, with a carousel displaying the favourited items, displaying each for 10 seconds before rotating to the next on autoplay, although there are also buttons tied to functions to move the user back and forth. The complete store inventory is displayed on cards below the carousel, with the vards also being displayed ont he Products page. Clicking on any of the cards takes the user to a page displaying that item, the different variants available for it and buttons to add them to a cart. The site design also includes mobile compatible breakpoints in the styling.
 
-- Fetch Data within a React App
-- Use react-router-dom
-- Use Firebase/Firestore
+## Tech Stack
+
+- Firestore Backend
+- React Front end
+- SASS for styling
 
 ## MVP
 
@@ -41,8 +42,10 @@ Using Firestore and react create, a cart system. Create a cart page in your reac
 
 1. Make sure your site is scoped to one category of products
 
-## Useful links
+## Icons
 
-- [React-router-dom](https://reactrouter.com/docs/en/v6/getting-started/overview)
-- [Dummy JSON](https://dummyjson.com/)
-- [Fake Store](https://fakestoreapi.com/)
+- Heart Icons: <"https://pixlok.com/images/like-icon-svg-heart-png-icon-free-download/">
+
+## Links
+
+- Github: <https://github.com/MartinO55/eShop>
