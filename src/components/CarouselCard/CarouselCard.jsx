@@ -13,7 +13,10 @@ const CarouselCard = ({ item, currentClass, index }) => {
         }
       >
         <div>
-          <img src={item.imgLink} className={styles.FeatureProductImg} />
+          <img
+            src={item.imgLink}
+            className={styles.CarouselCard__FeatureProductImg}
+          />
         </div>
       </div>
     </>
