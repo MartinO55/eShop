@@ -54,6 +54,7 @@ const CarouselContainer = () => {
       <div className={styles.CarouselContainer}>
         <div>
           {items.map((item, index) => {
+            //maybe check items length
             return (
               <CarouselCard
                 key={index} //key so react doesn't complain
