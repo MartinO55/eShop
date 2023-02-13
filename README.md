@@ -47,4 +47,4 @@ Using Firestore and react create, a cart system. Create a cart page in your reac
 ## Links
 
 - Github: <https://github.com/MartinO55/eShop>
-- Live site:
+- Live site: <https://martino55.github.io/eShop/>
