@@ -47,4 +47,5 @@ Using Firestore and react create, a cart system. Create a cart page in your reac
 ## Links
 
 - Github: <https://github.com/MartinO55/eShop>
-- Live site: <https://martino55.github.io/eShop/>
+- Live site: <https://singular-dasik-6c663a.netlify.app/>
+  - Because Github Cannot serve the jsx file type correctly, every web browser will block a github pages deploy of a react page due to a MIME type error.
