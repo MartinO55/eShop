@@ -12,22 +12,24 @@ This project is a shop front for a pet fashion store selling adoreable (and high
 
 ## MVP
 
-At a minimum your e-shop website should have two pages:
+This e-shop website has two pages:
 
 - Home Page
-  - This will contain:
+
+  - Containing:
     - A Grid of products
     - Carousel of featured products
-    - Product Page (with id parameter) Similar to a product page on another site, allows you to add to cart and select product variants
-- All products should be stored in Firestore:
-  - You should store the following information:
+
+- Product Page (with id parameter) Similar to a product page on another site, allows you to add to cart and select product variants
+
+- All product information is stored in Firestore:
+  - Including
     - quantity
     - variants (could be colors, sizes, etc)
     - price per unit
     - name
     - image url
     - favourited or not (boolean)
-      All data should be stored in Firestore and fetched by the frontend, there should be NO static product data in the react application
 
 ### Bonus
 
@@ -38,10 +40,6 @@ Using Firestore and react create, a cart system. Create a cart page in your reac
   - Ability to change quantity of products in cart
   - Ability to remove items from cart
 
-- TIPS :
-
-1. Make sure your site is scoped to one category of products
-
 ## Icons
 
 - Heart Icons: <"https://pixlok.com/images/like-icon-svg-heart-png-icon-free-download/">
@@ -49,3 +47,4 @@ Using Firestore and react create, a cart system. Create a cart page in your reac
 ## Links
 
 - Github: <https://github.com/MartinO55/eShop>
+- Live site:
