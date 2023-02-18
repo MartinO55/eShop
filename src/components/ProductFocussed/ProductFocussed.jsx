@@ -2,7 +2,7 @@ import React from "react";
 import { updateItem } from "../../helpers/updateItem.js";
 import { useState } from "react";
 import styles from "./ProductFoccussed.module.scss";
-import unFavouriteIcon from "../../assets/Heart_Icon_empty.svg"; //change to svg
+import unFavouriteIcon from "../../assets/Heart_Icon_empty.svg";
 import favouriteIcon from "../../assets/Heart_Icon_full.svg";
 
 const ProductFocussed = (product) => {
